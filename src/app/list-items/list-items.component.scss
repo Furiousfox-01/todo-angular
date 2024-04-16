@@ -1,0 +1,22 @@
+.addTask {
+  button {
+    margin-left: 1rem;
+  }
+}
+
+.completed {
+  text-decoration: line-through; 
+  color: #808080; 
+}
+
+ul {
+  li {
+    outline: auto;
+    padding: 1rem;
+    display: flex;
+    justify-content:space-between;
+    mat-checkbox {
+      margin-right: 3rem;
+    }
+  }
+}

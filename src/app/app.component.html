@@ -1,0 +1,22 @@
+<main class="main">
+  <div class="content">
+    <h1>Hello, {{ title }}</h1>
+    <div class="side">
+      <mat-checkbox class="tog1" [(ngModel)]="done">Done</mat-checkbox>
+      <mat-checkbox class="tog2" [(ngModel)]="not">notYet!!</mat-checkbox>
+      <button
+        mat-mini-fab
+        color="accent"
+        aria-label="Example icon button with a plus one icon"
+        (click)="addBar()"
+      >
+        <mat-icon>plus_one</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="lists">
+    <list-items [addbar]="addbar" [done]="done" [not]="not"></list-items>
+  </div>
+</main>
+
+<router-outlet />

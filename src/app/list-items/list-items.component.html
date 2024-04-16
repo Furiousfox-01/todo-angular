@@ -1,0 +1,42 @@
+<div class="addTask" *ngIf="addbar">
+  <mat-form-field appearance="fill">
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="newTask"
+      placeholder="Add New Task"
+      (keyup.enter)="addTodo()"
+    />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addTodo()">
+    Add Task
+  </button>
+</div>
+
+<ul>
+  <li *ngFor="let todo of todos" style="list-style: none">
+    <mat-checkbox
+      [ngModel]="todo.completed"
+      (ngModelChange)="toggleTodo(todo.id)"
+    >
+      <span [ngClass]="{ completed: todo.completed }">{{ todo.title }}</span>
+    </mat-checkbox>
+    <div class="rg">
+    <button mat-icon-button (click)="toggleEditMode(todo)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button (click)="removeTodo(todo.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <mat-form-field appearance="fill" *ngIf="todo.editMode">
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="updatedTitle"
+        #inputField
+        (keyup.enter)="updateTodo(todo.id)"
+      />
+    </mat-form-field>
+  </div>
+  </li>
+</ul>

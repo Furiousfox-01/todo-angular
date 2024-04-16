@@ -1,0 +1,17 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tog1,.tog2{
+ margin-right: 2rem;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .lists{
+        margin-top: 3rem;
+    }
+}
